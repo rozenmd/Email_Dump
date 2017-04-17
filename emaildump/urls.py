@@ -7,7 +7,7 @@ from django.views.i18n import set_language
 
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
-from web.views import *
+from web.views import on_incoming_message
 
 admin.autodiscover()
 
