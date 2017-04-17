@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.utils.decorators import method_decorator
 
 from django.views.decorators.csrf import csrf_exempt
 
@@ -9,6 +10,7 @@ from web.models import Email
 
 
 # @csrf_exempt
+@method_decorator(csrf_exempt)
 def on_incoming_message(request, key=None):
     if request.method == 'POST':
         sender = request.POST.get('sender')
